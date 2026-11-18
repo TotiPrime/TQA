@@ -1,0 +1,7 @@
+{
+ "manifest_version":3,"name":"IA con Criterio · Cuaderno y concentración","version":"1.0.0","minimum_chrome_version":"120",
+ "description":"Cuaderno de Proyecto Integrador y pausas voluntarias de sitios de IA.",
+ "permissions":["alarms","storage","declarativeNetRequest"],
+ "action":{"default_title":"IA con Criterio","default_popup":"popup.html"},
+ "background":{"service_worker":"background.js"}
+}

@@ -1,0 +1,9 @@
+reports/
+node_modules/
+__pycache__/
+.env
+.env.*
+*.pem
+*.zip
+
+!dist/Extension-IA-con-Criterio.zip

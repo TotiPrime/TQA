@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout()
+        disableConcurrentBuilds()
+        timestamps()
+        timeout(time: 10, unit: 'MINUTES')
+    }
+
+    stages {
+        stage('Descargar código') {
+            steps {
+                deleteDir()
+                checkout scm
+            }
+        }
+        stage('Verificar Node.js') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'node --version'
+                    } else {
+                        bat 'node --version'
+                    }
+                }
+            }
+        }
+        stage('Ejecutar pruebas') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'node scripts/run-ci.mjs'
+                    } else {
+                        bat 'node scripts/run-ci.mjs'
+                    }
+                }
+            }
+            post {
+                always {
+                    script {
+                        if (fileExists('reports/junit.xml')) {
+                            archiveArtifacts artifacts: 'reports/junit.xml', fingerprint: true
+                            junit 'reports/junit.xml'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es-BO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practica cómo usar la inteligencia artificial con criterio en la universidad.">
+  <meta name="theme-color" content="#122c28">
+  <title>IA con Criterio · Proyecto Integrador</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#principal">Ir al contenido</a>
+  <header class="top"><div class="bar frame">
+    <a href="./index.html" class="brand"><span class="mark" aria-hidden="true">✳</span><span>IA con Criterio<small>PROYECTO INTEGRADOR</small></span></a>
+    <a class="outline" href="./index.html">Volver a mi cuaderno</a>
+  </div></header>
+  <main class="frame" id="principal">
+    <h1 style="font-size:2.3rem;margin:28px 0">Práctica y orientación</h1>
+    <div class="layout">
+      <section class="panel workspace" aria-label="Actividades de aprendizaje">
+        <div class="modes" aria-label="Modo de aprendizaje">
+          <button type="button" data-view="chat" aria-controls="chat" aria-pressed="true">Conversar</button>
+          <button type="button" data-view="juegos" aria-controls="juegos" aria-pressed="false">Juegos de lógica</button>
+          <button type="button" data-view="reto" aria-controls="reto" aria-pressed="false">Reto de 6 casos</button>
+        </div>
+        <section id="chat" aria-labelledby="chat-title">
+          <header class="section-head"><div><h2 id="chat-title">Asistente de campaña</h2><p>Hábitos, pistas y ejemplos para estudiar con autonomía</p></div><button type="button" class="outline" id="reset">Reiniciar chat</button></header>
+          <div id="messages" tabindex="0" role="log" aria-label="Historial de conversación" aria-live="polite" aria-relevant="additions"></div>
+          <div class="composer">
+            <div id="follow-ups" class="quick-actions" role="group" aria-label="Preguntas de seguimiento" hidden></div>
+            <form id="ask">
+              <label for="question" class="sr-only">Escribe tu pregunta</label>
+              <input id="question" placeholder="Ej. ¿Cómo le pido ayuda sin que haga mi tarea?" required maxlength="360" autocomplete="off">
+              <button type="submit" class="primary">Enviar <span aria-hidden="true">›</span></button>
+            </form>
+            <p>Tu texto se procesa aquí. Evita escribir datos personales. El chat se borra al recargar o reiniciar.</p>
+          </div>
+        </section>
+        <section id="juegos" aria-labelledby="games-title" hidden>
+          <header class="section-head"><div><h2 id="games-title">Juegos de lógica</h2><p>Haz tu propio intento. Si te trabas, tienes una pista para toda la partida.</p></div></header>
+          <div id="logic-games"></div>
+        </section>
+        <section id="reto" aria-labelledby="quiz-title" hidden>
+          <header class="section-head"><div><h2 id="quiz-title">Decide en 6 casos</h2><p>Una decisión y una explicación por escenario.</p></div></header>
+          <div id="quiz"></div>
+        </section>
+      </section>
+      <aside class="rail" aria-labelledby="topics-title">
+        <div class="panel topics">
+          <p class="eyebrow">PRACTICA CON AUTONOMÍA</p>
+          <h2 id="topics-title">¿En qué necesitas ayuda?</h2>
+          <p>Empieza con una pregunta y pide un ejemplo.</p>
+          <div class="topic-list">
+            <button type="button" data-topic="reducir"><span class="tile" aria-hidden="true">01</span><span><strong>Usar menos IA</strong><small>Elige un hábito para empezar</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="asistente"><span class="tile" aria-hidden="true">02</span><span><strong>IA como asistente</strong><small>Define qué ayuda necesitas</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="pistas"><span class="tile" aria-hidden="true">03</span><span><strong>Pedir una pista</strong><small>Avanza desde tu propio intento</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="plan"><span class="tile" aria-hidden="true">04</span><span><strong>Plan de 7 días</strong><small>Prueba un cambio por día</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="medir"><span class="tile" aria-hidden="true">05</span><span><strong>Medir mi avance</strong><small>Comprueba qué puedes hacer por tu cuenta</small></span><span class="arrow" aria-hidden="true">›</span></button>
+          </div>
+          <div class="more-topics">
+            <button type="button" class="outline" data-topic="programar">Programar</button>
+            <button type="button" class="outline" data-topic="escribir">Escribir</button>
+            <button type="button" class="outline" data-topic="estudiar">Estudiar</button>
+            <button type="button" class="outline" data-topic="bloqueo">Salir de un bloqueo</button>
+          </div>
+        </div>
+        <div class="panel topics campaign-topics">
+          <p class="eyebrow">PUNTO DE PARTIDA</p>
+          <h2>Temas de la campaña</h2>
+          <p>Elige una situación para comenzar.</p>
+          <div class="topic-list">
+            <button type="button" data-topic="tarea"><span class="tile" aria-hidden="true">01</span><span><strong>Tareas y autoría</strong><small>Aprender sin delegar el trabajo</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="fuentes"><span class="tile" aria-hidden="true">02</span><span><strong>Fuentes inventadas</strong><small>Comprobar citas y datos</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="privacidad"><span class="tile" aria-hidden="true">03</span><span><strong>Datos y privacidad</strong><small>Elegir qué compartir</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="dependencia"><span class="tile" aria-hidden="true">04</span><span><strong>Dependencia de la IA</strong><small>Practicar con autonomía</small></span><span class="arrow" aria-hidden="true">›</span></button>
+            <button type="button" data-topic="desinformacion"><span class="tile" aria-hidden="true">05</span><span><strong>Sesgos y desinformación</strong><small>Contrastar antes de difundir</small></span><span class="arrow" aria-hidden="true">›</span></button>
+          </div>
+        </div>
+        <details class="panel sources">
+          <summary>Fuentes de la campaña</summary>
+          <ul>
+            <li><a href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research" target="_blank" rel="noopener noreferrer">UNESCO · IA generativa en educación</a></li>
+            <li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO · Competencias estudiantiles</a></li>
+            <li><a href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener noreferrer">NIST · Riesgos de la IA generativa</a></li>
+            <li><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener noreferrer">Bastani et al. · Aprendizaje y uso de IA</a></li>
+          </ul>
+        </details>
+      </aside>
+    </div>
+  </main>
+  <footer class="frame"><p>IA con Criterio · Propuesta académica · Cochabamba</p><p>Orientación educativa basada en reglas y fuentes seleccionadas.</p></footer>
+</body>
+</html>

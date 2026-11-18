@@ -1,0 +1,17 @@
+✔ una partida ofrece una pista, después del primer intento, y solo una (0.930819ms)
+✔ los nueve niveles tienen contenido y cada laberinto se puede resolver (0.841933ms)
+✔ clasifica preguntas con variantes y mantiene los temas anteriores (11.95725ms)
+✔ responde seguimientos con el último tema y permite cambiarlo (2.165696ms)
+✔ todos los temas tienen orientación y se mantienen los seis casos (0.407144ms)
+✔ inicio, concurrencia, cancelación, vencimiento y restauración de reglas en una API Chrome simulada (5.38125ms)
+✔ comparación emparejada con distintos denominadores y pares incompletos (1.828271ms)
+✔ copia consistente y fichas inválidas (5.009565ms)
+✔ orientación específica para entregas de distintas carreras (5.804269ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 181.503483

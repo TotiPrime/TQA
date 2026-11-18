@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="una partida ofrece una pista, después del primer intento, y solo una" time="0.000931" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/games.test.mjs"/>
+	<testcase name="los nueve niveles tienen contenido y cada laberinto se puede resolver" time="0.000842" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/games.test.mjs"/>
+	<testcase name="clasifica preguntas con variantes y mantiene los temas anteriores" time="0.011957" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/knowledge.test.mjs"/>
+	<testcase name="responde seguimientos con el último tema y permite cambiarlo" time="0.002166" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/knowledge.test.mjs"/>
+	<testcase name="todos los temas tienen orientación y se mantienen los seis casos" time="0.000407" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/knowledge.test.mjs"/>
+	<testcase name="inicio, concurrencia, cancelación, vencimiento y restauración de reglas en una API Chrome simulada" time="0.005381" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/pausa.test.mjs"/>
+	<testcase name="comparación emparejada con distintos denominadores y pares incompletos" time="0.001828" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/registro.test.mjs"/>
+	<testcase name="copia consistente y fichas inválidas" time="0.005010" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/registro.test.mjs"/>
+	<testcase name="orientación específica para entregas de distintas carreras" time="0.005804" classname="test" file="/workspace/scratch/2db1680cea12/entrega-tqa/IA-con-Criterio/tests/registro.test.mjs"/>
+	<!-- tests 9 -->
+	<!-- suites 0 -->
+	<!-- pass 9 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 181.503483 -->
+</testsuites>
