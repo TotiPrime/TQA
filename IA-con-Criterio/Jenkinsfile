@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -9,43 +10,53 @@ pipeline {
     }
 
     stages {
-        stage('Descargar código') {
+        stage('1. Descargar codigo') {
             steps {
                 deleteDir()
                 checkout scm
             }
         }
-        stage('Verificar Node.js') {
+
+        stage('2. Verificar Node.js') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'node --version'
-                    } else {
-                        bat 'node --version'
-                    }
+                bat 'node --version'
+            }
+        }
+
+        stage('3. Ejecutar pruebas') {
+            steps {
+                dir('IA-con-Criterio') {
+                    bat 'node scripts/run-ci.mjs'
                 }
             }
         }
-        stage('Ejecutar pruebas') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh 'node scripts/run-ci.mjs'
-                    } else {
-                        bat 'node scripts/run-ci.mjs'
-                    }
+    }
+
+    post {
+        always {
+            script {
+                def reporte = 'IA-con-Criterio/reports/junit.xml'
+
+                if (fileExists(reporte)) {
+                    junit testResults: reporte,
+                          allowEmptyResults: false
+
+                    archiveArtifacts(
+                        artifacts: reporte,
+                        fingerprint: true
+                    )
+                } else {
+                    echo 'No se genero el reporte JUnit.'
                 }
             }
-            post {
-                always {
-                    script {
-                        if (fileExists('reports/junit.xml')) {
-                            archiveArtifacts artifacts: 'reports/junit.xml', fingerprint: true
-                            junit 'reports/junit.xml'
-                        }
-                    }
-                }
-            }
+        }
+
+        success {
+            echo 'Pruebas finalizadas correctamente.'
+        }
+
+        failure {
+            echo 'La ejecucion presento errores.'
         }
     }
 }
